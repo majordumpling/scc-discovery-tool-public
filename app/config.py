@@ -2,9 +2,18 @@ import os
 import json
 import sys
 
-BASE_PATH = os.path.dirname(os.path.abspath(sys.argv[0]))
+def get_base_path():
+    """Get the base path for the application, works with PyInstaller."""
+    if getattr(sys, 'frozen', False):
+        # Running as compiled executable
+        return os.path.dirname(sys.executable)
+    else:
+        # Running as script
+        return os.path.dirname(os.path.abspath(sys.argv[0]))
+
+BASE_PATH = get_base_path()
 CONFIG_FILE = os.path.join(BASE_PATH, "config.json")
-CERT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'certs', 'ca_bundle.cer')
+CERT_PATH = os.path.join(BASE_PATH, 'certs', 'ca_bundle.cer')
 
 with open(CONFIG_FILE, "r") as f:
     _config = json.load(f)

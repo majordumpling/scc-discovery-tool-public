@@ -4,9 +4,7 @@ from app import logging_config
 
 logger = logging_config.get_logger(__name__)
 
-def create_request_text(url: str, username: str, password: str, CERT_PATH: str) -> str:
-    CERT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'certs', 'ca_bundle.cer')
-    
+def create_request_text(url: str, username: str, password: str, CERT_PATH: str) -> str:   
     try:
         logger.info(f"Making request to: {url}")
         response = requests.get(url, auth=(username, password), verify=CERT_PATH)
@@ -22,9 +20,7 @@ def create_request_text(url: str, username: str, password: str, CERT_PATH: str) 
         logger.error(f"Request failed: {str(e)}", exc_info=True)
         raise
     
-def create_request_json(url: str, username: str, password: str, CERT_PATH: str) -> dict:
-    CERT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'certs', 'ca_bundle.cer')
-    
+def create_request_json(url: str, username: str, password: str, CERT_PATH: str) -> dict:   
     try:
         logger.info(f"Making JSON request to: {url}")
         response = requests.get(url, auth=(username, password), verify=CERT_PATH)
