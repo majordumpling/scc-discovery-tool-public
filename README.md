@@ -4,7 +4,7 @@
 [![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
 [![Made for SAP](https://img.shields.io/badge/Made%20for-SAP%20Cloud%20Connector-orange.svg)]()
 
-> **Python tool to extract and export SAP Cloud Connector system mappings for audits, documentation, and troubleshooting.**
+> **Python tool to extract and export SAP Cloud Connector system mappings.**
 
 ---
 
