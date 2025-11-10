@@ -1,0 +1,14 @@
+{
+  "DEV_SERVER_HOST": "https://scc-dev.example.com:8443",
+  "QA_HOSTS": [
+    "https://scc-qa1.example.com:8443",
+    "https://scc-qa2.example.com:8443"
+  ],
+  "PROD_HOSTS": [
+    "https://scc-prod1.example.com:8443",
+    "https://scc-prod2.example.com:8443"
+  ],
+  "SUBACCOUNTS_API": "/api/v1/configuration/subaccounts",
+  "CHECK_MASTER_API": "/exposed?action=hasMasterRole",
+  "LOG_LEVEL": "INFO"
+}
